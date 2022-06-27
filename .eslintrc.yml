@@ -1,0 +1,35 @@
+env:
+  es2022: true
+  node: true
+parser: "@typescript-eslint/parser"
+plugins:
+  - "@typescript-eslint"
+  - "prettier"
+  - "simple-import-sort"
+extends:
+  - "eslint:recommended"
+  - "plugin:@typescript-eslint/recommended"
+  - "plugin:prettier/recommended"
+rules:
+  simple-import-sort/imports: "error"
+globals:
+  Atomics: readonly
+  SharedArrayBuffer: readonly
+parserOptions:
+  ecmaVersion: 2022
+  ecmaFeatures:
+    impliedStrict: true
+overrides:
+  - files:
+      - "*.test.ts"
+      - "*.spec.ts"
+    env:
+      jest: true
+    plugins:
+      - "jest"
+    extends:
+      - "plugin:jest/recommended"
+      - "plugin:jest/style"
+    rules:
+      "@typescript-eslint/no-unused-vars": off
+      "@typescript-eslint/no-non-null-assertion": off
