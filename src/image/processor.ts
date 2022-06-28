@@ -29,8 +29,8 @@ export class JimpProcessor implements ImageProcessor {
         alignmentY: Jimp.VERTICAL_ALIGN_MIDDLE,
         alignmentX: Jimp.HORIZONTAL_ALIGN_CENTER,
       },
-      1100,
-      600
+      1200,
+      625
     );
 
     //return buffer

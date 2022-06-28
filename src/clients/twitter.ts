@@ -24,14 +24,11 @@ export class TwitterApi implements Client {
       mimeType: EUploadMimeType.Png,
     });
 
-    const createdTweet = await this._client.v1.tweet("", {
-      media_ids: mediaId,
+    const createdTweet = await this._client.v2.tweet("", {
+      media: {
+        media_ids: [mediaId],
+      },
     });
-    console.log(
-      "Tweet Sent:",
-      createdTweet.id_str,
-      ":",
-      createdTweet.created_at
-    );
+    console.log("Tweet Sent:", createdTweet.data.id, ":", Date.now());
   }
 }

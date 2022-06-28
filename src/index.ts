@@ -19,7 +19,7 @@ try {
 
   const bot = new Bot(twitter, api, cron, image);
 
-  await bot.init();
+  await bot.post();
 } catch (e) {
   console.log("error starting bot", e);
 }

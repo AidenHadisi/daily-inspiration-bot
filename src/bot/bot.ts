@@ -31,7 +31,7 @@ export class Bot {
     }
   }
 
-  private async post(): Promise<void> {
+  public async post(): Promise<void> {
     try {
       const quote = await this.quotesApi.GetRandomQuote();
 
