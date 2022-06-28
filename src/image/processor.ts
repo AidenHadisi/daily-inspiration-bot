@@ -14,7 +14,9 @@ export class JimpProcessor implements ImageProcessor {
     const __dirname = dirname(__filename);
 
     //get the font.
-    const font = await Jimp.loadFont(join(__dirname, "./font.fnt"));
+    const font = await Jimp.loadFont(
+      join(__dirname, "../..", "/public/font.fnt")
+    );
 
     //read the image
     const result = await Jimp.read(this.randomImageUrl);
